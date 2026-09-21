@@ -1,0 +1,21 @@
+LAB 6 LOGBOOK - Dhruv Jagtap - e26b07f0782
+SETUP: My working directory is logbook
+T1: /bin holds all preinstalled commands
+T1: /dev holds binary files
+T1: / means it differentiates folders and shows the path, ~ means home directory, . means root directory
+T2 prediction: ./deploy will run because despite not giving the permission to execute, if the user is the administrator, deploy will run ./deploy
+T2 prediction: appending after u-w will take away the user's permission to write because we are removing the write permission
+T2: ./deploy failed at first because the user did not have the permission to execute deploy
+T2: the new policy needed chmod 744
+-rw-r--r--  1 dhruvjagtap269  staff  36  8 Sep 13:19 deploy
+T3 prediction: ./nst-info will not run because again, the user doesn't have permission to execute it.
+T3 prediction: adding .py to the name will not really change anything cuz nst-info is already a python file
+T3: python3 nst-info worked but ./nst-info failed because running a python file doesn't need permission but executing nst-info does
+T3: Renaming the file to .py changed nothing
+T3: file extensions are actually used by the user for understanding
+T4 prediction: a file called ls in ~/nst/bin will be gone
+T4: nst-info failed from /tmp because nst-info was in a system directory which is not changable
+T4: the full path worked because then th system didn't need to scrape through the entire thing, we gave it the exact location
+T4: PATH is searched from Users to home folder and stops at nst-info
+T4: my fake ls took over because the ls file from bin was gone but not removed
+T4: the PATH change vanished in a new terminal because export lasts for only one terminal session

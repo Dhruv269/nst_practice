@@ -1,0 +1,24 @@
+LAB 7 LOGBOOK-Dhruv Jagtap-E26B07F0782
+SETUP: clang version 21.0.0 python3 version 3.9.6
+T1: running hello.py created no new files
+T1 prediction: ./hello.c will give an error but python3 hello.c will not
+T1: ./hello.c failed because the file wasn't executable ; python3 hello.c failed because of invalid syntax
+T1: the extra step in the C workflow is to compile the code to clang and it then produces the output
+T1: when I run python3 hello.py the CPU executes the code ; hello.py is just a python file
+T1: hello.c is 73 bytes and hello.py is 27 bytes. My guess for the reason is that we compiled hello.c with clang before running it whereas with python, which is already compiled, we just ran the code, thus hello.c has a greater byte size.
+T2: file says hello is Mach-O 64-bit executable arm64
+T2 prediction: python3 itself is a script
+T2: python3 is a machine code so when I run python3 hello.py the CPU executes the program and reads the machine code as data
+T2: my string sits at offser 000004a0 inside hello
+T2: hello.py contains only 27 bytes; the extra later of bytes in hello are 33000
+T2: Ops saw garbage because a text editor was showing hello.py and as if it were hello
+T3 prediction: sum.c will win by about 50x
+T3: C took 0.063 seconds, python took 3.296 seconds, ratio = 0.019; the contractor's 50x claim is false
+T3: for hello the gap was 0 seconds and without time I would not have noticed
+T3: on every pass the interpreter read the code line by line which ./hello did not have to
+T3: interpretation cost matters when choosing an interpreter ad does not matter when choosing a compiler
+T3: sum_fast took 0.077 s which is suspicious because 100 million files running in such a less amount if time is kinda a shocker
+T4: same model of Mac as mine: send binary because both macs use the same architecture
+T4: the intern's Intel Mac (x86_64): send binary because it uses Intel architecture
+T4: a Windows laptop with Python installed: send PE because it uses Windows architecture
+T4: the Ubuntu build server (ELF): send ELF because it is based on Linux
